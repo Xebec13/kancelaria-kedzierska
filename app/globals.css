@@ -16,3 +16,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-montserrat),Arial, Helvetica, sans-serif;
 }
+@layer utilities {
+  .font-display {
+    font-family: var(--font-playfair-display);
+  }
+}

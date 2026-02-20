@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
+import { Loader } from "./ui/Loader";
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin", "latin-ext"],
@@ -13,10 +14,10 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Notariusz Paulina Kędzierska | Kancelaria Notarialna Warszawa",
-  description: "Profesjonalna kancelaria notarialna na Saskiej Kępie. Notariusz Paulina Kędzierska - pewność, bezpieczeństwo i terminowość czynności notarialnych.",
+  title: "Notariusz Paulina Kędzierska | Notariusz w Warszawie",
+  description: "Kancelaria notarialna na Saskiej Kępie, Praga Południe Warszawa. Notariusz Paulina Kędzierska",
   icons: {
-    icon: "/logo.svg", 
+    icon: "/logo.svg",
     apple: "/logo.svg",
   },
 };
@@ -29,9 +30,12 @@ export default function RootLayout({
   return (
     <html lang="pl" className="scroll-smooth">
       <body
-        className={`${playfairDisplay.variable} ${montserrat.variable} font-sans antialiased bg-[#201F1D] text-[#E9AB6E] selection:bg-[#E9AB6E] selection:text-[#201F1D]`}
+        className={`${playfairDisplay.variable} ${montserrat.variable} font-sans antialiased`}
       >
-        {children}
+        <Loader>
+
+          {children}
+        </Loader>
       </body>
     </html>
   );
