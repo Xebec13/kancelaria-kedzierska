@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
 body {
-  @apply bg-stone-900 text-stone-200;
+  @apply bg-stone-950 text-stone-50;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
 }
 @layer utilities {
-  h1.font-display,
-  h2.font-display,
-  p.font-display {
-    font-family: var(--font-playfair-display);
+  h1,h2,h3 {
+    font-family: var(--font-cinzel);
   }
 }

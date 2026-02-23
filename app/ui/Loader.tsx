@@ -61,7 +61,7 @@ export const Loader = ({ children }: LoaderProps) => {
             key="loader-overlay"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.8 } }}
-            className="fixed inset-0 z-9999 flex items-center justify-center overflow-hidden bg-inherit text-orange-300"
+            className="fixed inset-0 z-9999 flex items-center justify-center overflow-hidden bg-inherit text-inherit"
           >
             <div className="flex flex-col md:flex-row items-center gap-5 p-3">
               {/* BRAND ICON */}
@@ -96,7 +96,7 @@ export const Loader = ({ children }: LoaderProps) => {
                 
                 <motion.p 
                   variants={textItemVariants}
-                  className="font-sans text-base md:text-xl uppercase tracking-[0.4em] opacity-70"
+                  className="font-sans text-base md:text-xl uppercase font-light tracking-widest leading-tight opacity-70"
                 >
                   Notariusz w Warszawie
                 </motion.p>

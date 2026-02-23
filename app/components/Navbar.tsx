@@ -1,9 +1,13 @@
-export default function Navbar(){
+export default function Navbar() {
     return (
-        <nav className="fixed h-full max-h-15 lg:max-h-20 w-full px-5 md:px-10 lg:px-30 z-50">
-            <div className="border-2 h-full p-1 ">
-                d
-            </div>
+        <nav className="fixed flex items-center justify-end top-0 right-0 size-full max-h-10 lg:max-h-20 py-3 px-20 z-50">
+            
+            <ul className="flex items-center justify-between gap-10 text-base whitespace-nowrap">
+                <li>O Kancelarii</li>
+                <li>Czynności</li>
+                <li>Opłaty</li>
+                <li>Kontakt</li>
+            </ul>
         </nav>
     )
 }

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Montserrat } from "next/font/google";
+import { Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Loader } from "./ui/Loader";
 
-const playfairDisplay = Playfair_Display({
+const cinzel = Cinzel({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-playfair-display",
+  variable: "--font-cinzel",
 });
 
 const montserrat = Montserrat({
@@ -30,12 +30,12 @@ export default function RootLayout({
   return (
     <html lang="pl" className="scroll-smooth">
       <body
-        className={`${playfairDisplay.variable} ${montserrat.variable} font-sans antialiased`}
+        className={`${cinzel.variable} ${montserrat.variable} font-sans antialiased`}
       >
-        <Loader>
+        {/* <Loader> */}
 
           {children}
-        </Loader>
+        {/* </Loader> */}
       </body>
     </html>
   );
