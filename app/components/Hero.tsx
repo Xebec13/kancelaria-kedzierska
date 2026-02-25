@@ -31,9 +31,9 @@ const itemVariants: Variants = {
   }
 };
 
-// --- SUB-COMPONENTS ---
 const HeroImg = ({ scale }: { scale: MotionValue<number> }) => {
- 
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <motion.div
       style={{ scale }}
@@ -41,7 +41,8 @@ const HeroImg = ({ scale }: { scale: MotionValue<number> }) => {
     >
       <motion.div
         initial={{ opacity: 0, rotate: 15, y: 30 }}
-        animate={{ opacity: 1, rotate: 0, y: 0 }} // Animacja rusza tylko po ładowaniu
+        // KLUCZ: Animujemy TYLKO gdy isLoaded jest true
+        animate={isLoaded ? { opacity: 1, rotate: 0, y: 0 } : { opacity: 0 }}
         transition={{ duration: 1.5, ease: [0.3, 1, 0.3, 1] }}
         className="relative size-full overflow-hidden"
       >
@@ -51,6 +52,7 @@ const HeroImg = ({ scale }: { scale: MotionValue<number> }) => {
           fill
           fetchPriority="high"
           priority
+          onLoadingComplete={() => setIsLoaded(true)} // Nowoczesny callback w Next.js
           className="relative z-10 object-cover"
           sizes="(max-width: 1024px) 100vw, 30vw"
         />
