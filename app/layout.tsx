@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Loader } from "./ui/Loader";
+import SmoothScroll from "./ui/SmoothScroll";
 
 const cinzel = Cinzel({
   subsets: ["latin", "latin-ext"],
@@ -30,13 +31,13 @@ export default function RootLayout({
   return (
     <html lang="pl" className="scroll-smooth">
       <body
-        className={`${cinzel.variable} ${montserrat.variable} font-sans antialiased`}
-      >
-        <Loader>
-
-          {children}
-        </Loader>
+        className={`${cinzel.variable} ${montserrat.variable} font-sans antialiased`}>
+        <SmoothScroll>
+          <Loader>
+            {children}
+          </Loader>
+        </SmoothScroll>
       </body>
-    </html>
+    </html >
   );
 }
