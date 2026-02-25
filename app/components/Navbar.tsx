@@ -14,7 +14,7 @@ const navItems = [
 // --- VARIANTS ---
 
 const itemRevealVariants: Variants = {
-  hidden: { y: "-100%" },
+  hidden: { y: "-150%" },
   visible: (custom: number) => ({
     y: 0,
     transition: {
@@ -103,7 +103,7 @@ export default function Navbar() {
         </div>
 
         {/* HAMBURGER BUTTON WRAPPER */}
-        <div className="lg:hidden overflow-hidden py-1">
+        <div className="lg:hidden overflow-hidden py-1 z-50">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -156,7 +156,7 @@ export default function Navbar() {
               animate="visible"
               exit="exit"
               onClick={toggleMenu}
-              className="fixed inset-0 bg-stone-950/60 backdrop-blur-md z-40"
+              className="fixed lg:hidden inset-0 bg-stone-950/60 backdrop-blur-md z-40"
             />
 
             <motion.aside
@@ -164,7 +164,7 @@ export default function Navbar() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="fixed top-0 right-0 h-screen w-full max-w-2/3 md:max-w-1/2 bg-stone-900 z-50 shadow-2xl flex flex-col pt-32 px-10 pb-10 border-l border-stone-800"
+              className="fixed lg:hidden top-0 right-0 h-screen w-full max-w-2/3 md:max-w-1/2 bg-stone-900 z-40 shadow-2xl flex flex-col py-20 px-5 border-l border-stone-800"
             >
               <nav>
                 <ul className="flex flex-col space-y-8">
@@ -173,7 +173,7 @@ export default function Navbar() {
                       <Link
                         href={item.href}
                         onClick={toggleMenu}
-                        className="text-stone-200 text-4xl font-light uppercase tracking-tighter transition-all hover:text-orange-300 block"
+                        className="text-stone-200 text-lg md:text-xl font-light uppercase tracking-tighter transition-all hover:text-orange-300 block"
                       >
                         <span className="inline-block transition-transform duration-300 group-hover/item:translate-x-4">
                           {item.label}
@@ -184,10 +184,10 @@ export default function Navbar() {
                 </ul>
               </nav>
 
-              <div className="mt-auto border-t border-stone-800 pt-8">
-                <p className="text-stone-500 uppercase tracking-widest text-xs mb-4">Kontakt</p>
-                <p className="text-stone-300 text-sm">p.kedzierska@notariusze.waw.pl</p>
-                <p className="text-stone-300 text-sm mt-2">123 456 789</p>
+              <div className="mt-auto border-t border-stone-800 pt-8 space-y-2">
+                <p className="text-stone-500 uppercase tracking-widest text-sm mb-4">Kontakt</p>
+                <p className="text-stone-300 text-xs">p.kedzierska@notariusze.waw.pl</p>
+                <p className="text-stone-300 text-xs">123 456 789</p>
               </div>
             </motion.aside>
           </>
