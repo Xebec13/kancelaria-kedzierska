@@ -32,39 +32,41 @@ const itemVariants: Variants = {
 };
 
 // --- SUB-COMPONENTS ---
-const HeroImg = ({ scale }: { scale: MotionValue<number> }) => (
-  <motion.div
-    style={{ scale }}
-    className="absolute top-1/7 left-1/2 size-1/5 min-h-80 min-w-3xs -translate-x-1/2 will-change-transform lg:top-1/4 lg:left-1/9 lg:size-full lg:max-h-1/2 lg:max-w-sm lg:translate-0"
-  >
-    <motion.div
-      initial={{ opacity: 0, rotate: 15, y: 30 }}
-      animate={{ opacity: 1, rotate: 0, y: 0 }}
-      transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-      className="relative size-full overflow-hidden bg-orange-300/30"
-    >
+const HeroImg = ({ scale }: { scale: MotionValue<number> }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
 
-      <Image
-        src="/pk-wood-bg.png"
-        alt=""
-        fill
-        priority
-        fetchPriority="high" // Wymuszamy priorytet również dla tła
-        sizes="(max-width: 1024px) 100vw, 30vw"
-        className="object-cover blur-[5px] scale-110"
-      />
-      <Image
-        src="/pk-notariusz.png"
-        alt="Paulina Kędzierska"
-        sizes="(max-width: 1024px) 100vw, 30vw"
-        fetchPriority="high"
-        fill
-        className="relative z-10 object-contain"
-        priority
-      />
+  return (
+    <motion.div
+      style={{ scale }}
+      className="absolute top-1/7 left-1/2 size-1/5 min-h-80 min-w-3xs -translate-x-1/2 will-change-transform lg:top-1/4 lg:left-1/9 lg:size-full lg:max-h-1/2 lg:max-w-sm lg:translate-0"
+    >
+      <motion.div
+        initial={{ opacity: 0, rotate: 15, y: 30 }}
+        animate={isLoaded ? { opacity: 1, rotate: 0, y: 0 } : {}} // Animacja rusza tylko po ładowaniu
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        className="relative size-full overflow-hidden bg-orange-300/10"
+      >
+        <Image
+          src="/pk-wood-bg.png"
+          alt=""
+          fill
+          priority
+          onLoad={() => setIsLoaded(true)} // Tutaj wyzwalamy gotowość
+          sizes="(max-width: 1024px) 100vw, 30vw"
+          className="object-cover blur-[5px] scale-110 opacity-50"
+        />
+        <Image
+          src="/pk-notariusz.png"
+          alt="Paulina Kędzierska"
+          fill
+          priority
+          className="relative z-10 object-contain"
+          sizes="(max-width: 1024px) 100vw, 30vw"
+        />
+      </motion.div>
     </motion.div>
-  </motion.div>
-);
+  );
+};
 
 const HeroTitle = ({ y }: { y: MotionValue<string> }) => (
   <motion.div
@@ -80,7 +82,7 @@ const HeroTitle = ({ y }: { y: MotionValue<string> }) => (
   >
     <Image
       src="/title-9.svg"
-      alt="Kędzierska"
+      alt="Notariusz Paulina Kędzierska - Kancelaria Notarialna Warszawa Saska Kępa"
       fetchPriority="high"
       fill
       className="object-contain object-bottom px-3 lg:px-10"
@@ -155,7 +157,7 @@ const HeroContent = () => {
         <motion.div variants={itemVariants} className="row-start-2 lg:row-start-1 lg:col-start-3 flex flex-col justify-start mx-auto items-center max-w-fit">
           <h2 className="font-cinzel text-base font-light">Notariusz w Warszawie</h2>
           <Separator className="text-orange-300/50" delay={3.5} />
-          <h3 className="text-base font-light whitespace-pre-wrap">Praga Południe | Saska Kępa</h3>
+          <h3 className="text-sm font-light whitespace-pre-wrap">Praga Południe | Saska Kępa</h3>
         </motion.div>
 
         <motion.div variants={itemVariants} className="col-span-2 row-start-3 lg:row-start-2 overflow-hidden px-1">
@@ -168,7 +170,7 @@ const HeroContent = () => {
           <button className="cursor-pointer border border-stone-500 py-3 px-6 text-xs font-bold uppercase tracking-widest text-stone-300 transition-all hover:bg-orange-300 hover:border-orange-300 hover:text-stone-950">
             123 456 789
           </button>
-          <button className="cursor-pointer border border-stone-500 py-3 px-6 text-xs font-bold uppercase tracking-widest text-stone-300 transition-all hover:bg-orange-300 hover:border-orange-300 hover:text-stone-950">
+          <button  className="cursor-pointer border border-stone-500 py-3 px-6 text-xs font-bold uppercase tracking-widest text-stone-300 transition-all hover:bg-orange-300 hover:border-orange-300 hover:text-stone-950">
             p.kedzierska@notariusze.waw.pl
           </button>
         </motion.div>
