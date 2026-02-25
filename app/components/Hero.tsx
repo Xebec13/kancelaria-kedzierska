@@ -43,14 +43,20 @@ const HeroImg = ({ scale }: { scale: MotionValue<number> }) => (
       transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
       className="relative size-full overflow-hidden bg-orange-300/30"
     >
-      <div
-        className="absolute inset-0 scale-110 bg-center bg-contain blur-[5px]"
-        style={{ backgroundImage: "url('/pk-wood-bg.png')" }}
+      
+      <Image
+        src="/pk-wood-bg.png"
+        alt=""
+        fill
+        priority
+        sizes="30vw"
+        className="object-cover blur-[5px] scale-110"
       />
       <Image
         src="/pk-notariusz.png"
         alt="Paulina Kędzierska"
         sizes="(max-width: 1024px) 100vw, 30vw"
+        fetchPriority="high"
         fill
         className="relative z-10 object-contain"
         priority
@@ -73,7 +79,8 @@ const HeroTitle = ({ y }: { y: MotionValue<string> }) => (
   >
     <Image
       src="/title-9.svg"
-      alt="Paulina Kędzierska"
+      alt="Kędzierska"
+      fetchPriority="high"
       fill
       className="object-contain object-bottom px-3 lg:px-10"
       priority
@@ -141,7 +148,7 @@ const HeroContent = () => {
         />
         <motion.div variants={itemVariants} className="lg:col-span-2 text-xl">
           <h1 className="font-cinzel text-orange-300 uppercase tracking-widest font-medium">Paulina Kędzierska</h1>
-          <h4 className="text-[10px] uppercase text-stone-100 tracking-[0.3em] mt-1 font-light">Kancelaria Notarialna</h4>
+          <p className="text-[10px] uppercase text-stone-100 tracking-[0.3em] mt-1 font-light">Kancelaria Notarialna</p>
         </motion.div>
 
         <motion.div variants={itemVariants} className="row-start-2 lg:row-start-1 lg:col-start-3 flex flex-col justify-start mx-auto items-center max-w-fit">
@@ -182,7 +189,7 @@ export default function Hero() {
   const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.95]);
 
   return (
-    <section ref={containerRef} id="hero" className="relative h-[300vh] bg-stone-950">
+    <main ref={containerRef} id="hero" className="relative h-[300vh] bg-stone-950">
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         <HeroImg scale={imgScale} />
         <HeroTitle y={y} />
@@ -190,6 +197,6 @@ export default function Hero() {
       <div className="flex min-h-[200vh] items-end justify-end relative z-10 overflow-hidden p-1 lg:p-5">
         <HeroContent />
       </div>
-    </section>
+    </main>
   );
 }
