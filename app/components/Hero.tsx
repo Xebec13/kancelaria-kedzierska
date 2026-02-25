@@ -49,6 +49,7 @@ const HeroImg = ({ scale }: { scale: MotionValue<number> }) => {
           src="/pk-3.png"
           alt="Paulina Kędzierska"
           fill
+          fetchPriority="high"
           priority
           className="relative z-10 object-cover"
           sizes="(max-width: 1024px) 100vw, 30vw"
