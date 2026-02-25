@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   title: "Notariusz Paulina Kędzierska | Notariusz w Warszawie",
   description: "Kancelaria notarialna na Saskiej Kępie, Praga Południe Warszawa. Notariusz Paulina Kędzierska",
   icons: {
-    icon: "/logo.svg",
-    apple: "/logo.svg",
+    icon: "/logo-6.svg",
+    apple: "/logo-6.svg",
   },
 };
 
