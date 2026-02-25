@@ -33,8 +33,7 @@ const itemVariants: Variants = {
 
 // --- SUB-COMPONENTS ---
 const HeroImg = ({ scale }: { scale: MotionValue<number> }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
+ 
   return (
     <motion.div
       style={{ scale }}
@@ -42,25 +41,16 @@ const HeroImg = ({ scale }: { scale: MotionValue<number> }) => {
     >
       <motion.div
         initial={{ opacity: 0, rotate: 15, y: 30 }}
-        animate={isLoaded ? { opacity: 1, rotate: 0, y: 0 } : {}} // Animacja rusza tylko po ładowaniu
-        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-        className="relative size-full overflow-hidden bg-orange-300/10"
+        animate={{ opacity: 1, rotate: 0, y: 0 }} // Animacja rusza tylko po ładowaniu
+        transition={{ duration: 1.5, ease: [0.3, 1, 0.3, 1] }}
+        className="relative size-full overflow-hidden"
       >
         <Image
-          src="/pk-wood-bg.png"
-          alt=""
-          fill
-          priority
-          onLoad={() => setIsLoaded(true)} // Tutaj wyzwalamy gotowość
-          sizes="(max-width: 1024px) 100vw, 30vw"
-          className="object-cover blur-[5px] scale-110 opacity-50"
-        />
-        <Image
-          src="/pk-notariusz.png"
+          src="/pk-3.png"
           alt="Paulina Kędzierska"
           fill
           priority
-          className="relative z-10 object-contain"
+          className="relative z-10 object-cover"
           sizes="(max-width: 1024px) 100vw, 30vw"
         />
       </motion.div>
