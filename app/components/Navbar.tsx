@@ -53,9 +53,9 @@ export default function Navbar() {
     <>
       <nav className="fixed flex items-center justify-end top-0 right-0 py-3 px-5 lg:py-5 lg:px-10 z-60">
         {/* DESKTOP MENU */}
-        <ul className="hidden lg:flex items-center space-x-8 text-sm font-semibold uppercase tracking-widest text-stone-200">
+        <div className="hidden lg:flex items-center space-x-8 text-sm font-semibold uppercase tracking-widest text-stone-200">
           {navItems.map((item, i) => (
-            <div key={item.key} className="overflow-hidden py-1">
+            <ul key={item.key} className="overflow-hidden py-1">
               <motion.li
                 custom={i}
                 initial="hidden"
@@ -65,9 +65,9 @@ export default function Navbar() {
               >
                 <Link href={item.href}>{item.label}</Link>
               </motion.li>
-            </div>
+            </ul>
           ))}
-        </ul>
+        </div>
 
         {/* HAMBURGER BUTTON WRAPPER */}
         <div className="lg:hidden overflow-hidden py-1">

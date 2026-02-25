@@ -43,13 +43,14 @@ const HeroImg = ({ scale }: { scale: MotionValue<number> }) => (
       transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
       className="relative size-full overflow-hidden bg-orange-300/30"
     >
-      
+
       <Image
         src="/pk-wood-bg.png"
         alt=""
         fill
         priority
-        sizes="30vw"
+        fetchPriority="high" // Wymuszamy priorytet również dla tła
+        sizes="(max-width: 1024px) 100vw, 30vw"
         className="object-cover blur-[5px] scale-110"
       />
       <Image
@@ -154,7 +155,7 @@ const HeroContent = () => {
         <motion.div variants={itemVariants} className="row-start-2 lg:row-start-1 lg:col-start-3 flex flex-col justify-start mx-auto items-center max-w-fit">
           <h2 className="font-cinzel text-base font-light">Notariusz w Warszawie</h2>
           <Separator className="text-orange-300/50" delay={3.5} />
-          <h3 className="text-base opacity-70 font-light whitespace-pre-wrap">Praga Południe | Saska Kępa</h3>
+          <h3 className="text-base font-light whitespace-pre-wrap">Praga Południe | Saska Kępa</h3>
         </motion.div>
 
         <motion.div variants={itemVariants} className="col-span-2 row-start-3 lg:row-start-2 overflow-hidden px-1">

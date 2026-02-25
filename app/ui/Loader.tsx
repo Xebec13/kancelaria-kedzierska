@@ -96,7 +96,7 @@ export const Loader = ({ children }: LoaderProps) => {
                 
                 <motion.p 
                   variants={textItemVariants}
-                  className="font-sans text-base lg:text-lg uppercase font-light tracking-widest leading-tight opacity-50"
+                  className="font-sans text-base lg:text-lg uppercase font-light tracking-widest leading-tight opacity-80"
                 >
                   Notariusz w Warszawie
                 </motion.p>
