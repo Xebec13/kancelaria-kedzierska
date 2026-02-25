@@ -63,15 +63,15 @@ export const Loader = ({ children }: LoaderProps) => {
             exit={{ opacity: 0, transition: { duration: 0.8 } }}
             className="fixed inset-0 z-9999 flex items-center justify-center overflow-hidden bg-inherit text-inherit"
           >
-            <div className="flex flex-col md:flex-row items-center gap-5 p-3">
+            <div className="flex flex-col lg:flex-row items-center gap-5 p-3">
               {/* BRAND ICON */}
               <motion.div
                 variants={quillVariants}
                 initial="initial"
                 animate="animate"
-                className="relative size-18 md:size-20"
+                className="relative size-10 lg:size-15"
               >
-                <Image src="/logo.svg" alt="Logo" fill className="object-contain" priority />
+                <Image src="/logo-6.svg" alt="Logo" fill className="object-contain opacity-80" priority />
               </motion.div>
 
               {/* BRAND TEXT */}
@@ -83,7 +83,7 @@ export const Loader = ({ children }: LoaderProps) => {
               >
                 <motion.p 
                   variants={textItemVariants}
-                  className="font-display whitespace-nowrap text-3xl md:text-5xl leading-tight tracking-widest"
+                  className="font-cinzel whitespace-nowrap text-xl lg:text-3xl leading-tight tracking-widest text-orange-300"
                 >
                   Paulina Kędzierska
                 </motion.p>
@@ -91,12 +91,12 @@ export const Loader = ({ children }: LoaderProps) => {
                 <motion.div 
                   variants={lineVariants}
                   style={{ originX: 1 }}
-                  className="my-1.5 h-0.5 w-full bg-current"
+                  className="my-1.5 h-0.5 w-full bg-orange-300 opacity-50"
                 />
                 
                 <motion.p 
                   variants={textItemVariants}
-                  className="font-sans text-base md:text-xl uppercase font-light tracking-widest leading-tight opacity-70"
+                  className="font-sans text-base lg:text-lg uppercase font-light tracking-widest leading-tight opacity-50"
                 >
                   Notariusz w Warszawie
                 </motion.p>

@@ -32,10 +32,10 @@ export default function RootLayout({
       <body
         className={`${cinzel.variable} ${montserrat.variable} font-sans antialiased`}
       >
-        {/* <Loader> */}
+        <Loader>
 
           {children}
-        {/* </Loader> */}
+        </Loader>
       </body>
     </html>
   );
