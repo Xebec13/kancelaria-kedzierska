@@ -69,7 +69,7 @@ const HeroTitle = ({ y }: { y: MotionValue<string> }) => (
     transition={{
       duration: 3,
       delay: 0.5,
-      ease: [0.5, 1, 0.3, 1]
+      ease: [0.3, 1, 0.3, 1]
     }}
     className="absolute bottom-1/5 lg:bottom-0 lg:left-0 size-full max-w-full opacity-95 mix-blend-plus-darker pointer-events-none"
   >
