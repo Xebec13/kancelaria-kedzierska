@@ -83,7 +83,7 @@ export default function Navbar() {
         initial={{ y: 0 }}
         animate={{ y: isVisible || isOpen ? 0 : -100 }} // Jeśli menu otwarte, nie chowa paska
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-end py-3 px-5 lg:py-5 lg:px-10"
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-end py-2 px-4 lg:py-5 lg:px-7"
       >
         {/* DESKTOP MENU */}
         <div className="hidden lg:flex items-center space-x-8 text-sm font-semibold uppercase tracking-widest text-stone-200">
