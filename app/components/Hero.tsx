@@ -37,7 +37,7 @@ const HeroImg = ({ scale }: { scale: MotionValue<number> }) => {
   return (
     <motion.div
       style={{ scale }}
-      className="absolute top-1/7 left-1/2 size-1/5 min-h-80 min-w-3xs -translate-x-1/2 will-change-transform lg:top-1/4 lg:left-1/9 lg:size-full lg:max-h-1/2 lg:max-w-sm lg:translate-0"
+      className="absolute top-1/7 left-1/2 size-1/5 min-h-80 min-w-3xs -translate-x-1/2 will-change-transform lg:top-1/4 lg:left-1/9 lg:size-full lg:max-h-1/2 lg:max-w-md lg:translate-0"
     >
       <motion.div
         initial={{ opacity: 0, rotate: 15, y: 30 }}
@@ -53,7 +53,7 @@ const HeroImg = ({ scale }: { scale: MotionValue<number> }) => {
           fetchPriority="high"
           priority
           onLoadingComplete={() => setIsLoaded(true)} // Nowoczesny callback w Next.js
-          className="relative z-10 object-cover"
+          className="relative z-10 object-contain"
           sizes="(max-width: 1024px) 100vw, 30vw"
         />
       </motion.div>
@@ -71,14 +71,14 @@ const HeroTitle = ({ y }: { y: MotionValue<string> }) => (
       delay: 0.5,
       ease: [0.3, 1, 0.3, 1]
     }}
-    className="absolute bottom-1/5 lg:bottom-0 lg:left-0 size-full max-w-full opacity-95 mix-blend-plus-darker pointer-events-none"
+    className="absolute bottom-1/5 lg:bottom-0 lg:left-0 size-full max-w-full opacity-95 mix-blend-multiply pointer-events-none"
   >
     <Image
       src="/title-9.svg"
       alt="Notariusz Paulina Kędzierska - Kancelaria Notarialna Warszawa Saska Kępa"
       fetchPriority="high"
       fill
-      className="object-contain object-bottom px-3 lg:px-10"
+      className="object-contain object-bottom px-3 lg:px-10 "
       priority
     />
   </motion.div>
